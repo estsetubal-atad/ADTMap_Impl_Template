@@ -181,7 +181,7 @@ void testStress(PtMap map) {
 
 	/* the mappings don't matter, just the performance */
 	clock_t start, end;
-    double cpu_time_used;
+	double cpu_time_used;
 
 	/* put mappings */
 	start = clock();
@@ -189,9 +189,9 @@ void testStress(PtMap map) {
 		mapPut(map, testArr[i], testArr[i]);
 	}
 	end = clock();
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    
-    printf("-- Time taken for mapPut: %lf seconds \n", cpu_time_used);
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	
+	printf("-- Time taken for mapPut: %lf seconds \n", cpu_time_used);
 
 	/* search mappings, via contains, with unordered array */
 	start = clock();
@@ -199,9 +199,9 @@ void testStress(PtMap map) {
 		mapContains(map, i);
 	}
 	end = clock();
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    
-    printf("-- Time taken for mapContains (search only): %lf seconds \n", cpu_time_used);
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	
+	printf("-- Time taken for mapContains (search only): %lf seconds \n", cpu_time_used);
 
 	free(testArr);	
 }
