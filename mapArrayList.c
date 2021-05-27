@@ -128,11 +128,9 @@ int mapGet(PtMap map, MapKey key, MapValue *ptValue) {
 MapKey* mapKeys(PtMap map) {
 	if (map == NULL || map->size == 0) return NULL;
 
-	MapKey *keys = (MapKey*)calloc(map->size, sizeof(MapKey));
+	MapKey *keys = NULL;
 
-	for (int i = 0; i < map->size; i++) {
-		keys[i] = map->elements[i].key;
-	}
+	/* TODO */
 
 	return keys;
 }
@@ -140,23 +138,23 @@ MapKey* mapKeys(PtMap map) {
 MapValue* mapValues(PtMap map) {
 	if (map == NULL || map->size == 0) return NULL;
 
-	MapValue *values = (MapValue*)calloc(map->size, sizeof(MapValue));
+	MapValue *values = = NULL;
 
-	for (int i = 0; i < map->size; i++) {
-		values[i] = map->elements[i].value;
-	}
+	/* TODO */
 
 	return values;
 }
 
 int mapSize(PtMap map, int *ptSize) {
 	if (map == NULL) return MAP_NULL;
+
 	*ptSize = map->size;
+
 	return MAP_OK;
 }
 
 bool mapIsEmpty(PtMap map) {
-	if (map == NULL) return 1;
+	if (map == NULL) return true;
 	return (map->size == 0);
 }
 
